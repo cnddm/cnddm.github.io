@@ -1,0 +1,13 @@
+/*
+  Styles propres à ce site (les autres fichiers CSS viennent de LittleLink
+  et ne doivent pas être modifiés, pour pouvoir les mettre à jour un jour).
+
+  Bouton "Nous écrire" : rouge repris de la croix du logo (#991B1E).
+  Contraste avec le texte blanc : 8,3:1 (norme d'accessibilité WCAG AA : 4,5:1).
+*/
+
+.button.button-contact {
+	--button-text: #ffffff;
+	--button-background: #991B1E;
+	--button-border: 1px solid #991B1E;
+}

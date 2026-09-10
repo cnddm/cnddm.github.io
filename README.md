@@ -1,9 +1,9 @@
-# Ma page de liens
+# Chœur Notre-Dame du Magnificat — page de liens
 
-Une page unique qui regroupe tous mes liens (Facebook, Instagram, YouTube…),
-à partager en une seule adresse.
+Une page unique qui regroupe tous les liens du chœur (Instagram, Facebook,
+YouTube, contact), à partager en une seule adresse.
 
-### 👉 Adresse du site : https://PSEUDO.github.io
+### 👉 Adresse du site : https://cnddm.github.io
 
 Le site est gratuit et n'expire pas. Il n'y a rien à payer, rien à renouveler.
 
@@ -45,12 +45,12 @@ Le fichier **`index.original.html`** contient une centaine de boutons tout prêt
 Ouvrez-le, copiez la ligne du réseau voulu, collez-la dans `index.html`
 au milieu des autres boutons, puis remplacez le `#` par votre lien.
 
-## Changer le nom, la phrase ou la photo
+## Changer le nom, la phrase ou le logo
 
 Dans `index.html`, tout ce qui est personnalisable est signalé par un
 commentaire **`<<< A REMPLIR >>>`** juste au-dessus.
 
-Pour la photo : remplacez les fichiers `images/avatar.png` (128 × 128 pixels)
+Pour le logo : remplacez les fichiers `images/avatar.png` (128 × 128 pixels)
 et `images/avatar@2x.png` (256 × 256 pixels) en gardant exactement ces noms.
 
 ## En cas d'erreur
@@ -65,8 +65,8 @@ garde l'historique de toutes les modifications, et permet de revenir en arrière
 Ce site est rattaché à un **compte GitHub dédié**, créé avec une **adresse Proton Mail
 dédiée**. Rien d'autre n'est lié à ce compte : le transmettre suffit.
 
-1. L'ancien responsable transmet l'adresse Proton et les deux mots de passe
-   (Proton et GitHub).
+1. L'ancien responsable transmet l'adresse Proton (`choeurnddm@proton.me`) et les
+   deux mots de passe (Proton et GitHub).
 2. Le nouveau responsable **change immédiatement les deux mots de passe**.
 3. Il vérifie qu'aucune double authentification ne pointe encore vers l'ancien
    téléphone : sur GitHub, *Settings → Password and authentication*.
@@ -82,14 +82,14 @@ dédiée**. Rien d'autre n'est lié à ce compte : le transmettre suffit.
 Site statique basé sur [LittleLink](https://littlelink.io) v3.11.0 (licence MIT).
 Aucun serveur, aucune base de données, aucun script.
 
-**Hébergement** — GitHub Pages, dépôt public nommé `PSEUDO.github.io`,
+**Hébergement** — GitHub Pages, dépôt public nommé `cnddm.github.io`,
 *Settings → Pages → Deploy from a branch → `main` / `(root)`*.
 
 **En local**
 
 ```bash
-git clone https://github.com/PSEUDO/PSEUDO.github.io.git
-cd PSEUDO.github.io
+git clone https://github.com/cnddm/cnddm.github.io.git
+cd cnddm.github.io
 python -m http.server 8123   # puis http://localhost:8123
 ```
 
@@ -104,9 +104,10 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | `index.html` | La page publiée |
 | `index.original.html` | Catalogue LittleLink complet des boutons |
 | `privacy.html` | Page de confidentialité |
-| `css/brands.css` | Couleurs officielles des marques |
+| `css/brands.css` | Couleurs officielles des marques (ne pas modifier) |
+| `css/custom.css` | Couleurs propres au chœur (bouton « Nous écrire ») |
 | `images/icons/` | Logos SVG |
-| `docker/`, `wrangler.toml` | Hébergements alternatifs, non utilisés |
+| `images/logo-source.jpg` | Logo d'origine en haute définition (1600 px) |
 
 **Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
 HTTPS fourni gratuitement par GitHub.
