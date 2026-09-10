@@ -109,6 +109,44 @@ h1 {
 	box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.55);
 }
 
+/* ------------------------------------------------------------------
+   Arrivée des boutons au chargement
+   Chaque bouton entre par la gauche, dépasse très légèrement sa place
+   comme s'il butait contre un mur, oscille une fois puis se fixe.
+   Ils partent en cascade : un décalage de 80 ms les uns après les autres.
+
+   « backwards » applique le premier palier pendant le délai (sinon les
+   boutons apparaîtraient à leur place avant de partir), et rend la main
+   au style normal une fois fini — c'est ce qui laisse le survol
+   fonctionner, alors que les deux utilisent transform.
+   ------------------------------------------------------------------ */
+
+@keyframes arrivee-par-la-gauche {
+	0%   { opacity: 0; transform: translateX(-135%); }
+	50%  { opacity: 1; transform: translateX(3.5%); }   /* le mur */
+	68%  { transform: translateX(-1.8%); }              /* premier retour */
+	84%  { transform: translateX(0.7%); }
+	94%  { transform: translateX(-0.25%); }
+	100% { transform: translateX(0); }
+}
+
+.button-stack .button {
+	animation: arrivee-par-la-gauche 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+}
+
+.button-stack .button:nth-of-type(1) { animation-delay: 0.05s; }
+.button-stack .button:nth-of-type(2) { animation-delay: 0.13s; }
+.button-stack .button:nth-of-type(3) { animation-delay: 0.21s; }
+.button-stack .button:nth-of-type(4) { animation-delay: 0.29s; }
+.button-stack .button:nth-of-type(5) { animation-delay: 0.37s; }
+.button-stack .button:nth-of-type(6) { animation-delay: 0.45s; }
+
+/* Les boutons sortent de l'écran pendant l'animation : sans cela, la page
+   pourrait défiler latéralement le temps qu'ils arrivent. */
+body {
+	overflow-x: hidden;
+}
+
 /* Ombre plus marquée sur les boutons : c'est elle qui les fait flotter,
    maintenant qu'il n'y a plus de panneau derrière eux. */
 .button-stack .button {
@@ -122,9 +160,11 @@ h1 {
 	box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
 }
 
-/* Respecte le réglage système « réduire les animations ». */
+/* Respecte le réglage système « réduire les animations » : ni arrivée
+   glissée, ni soulèvement au survol. Les boutons sont simplement là. */
 @media (prefers-reduced-motion: reduce) {
 	.button-stack .button {
+		animation: none;
 		transition: none;
 	}
 	.button-stack .button:hover,
