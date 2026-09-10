@@ -40,7 +40,7 @@ de `<a` jusqu'à `</a>`. Enregistrez comme à l'étape 5.
 
 ## Ajouter un réseau
 
-Le fichier **`index.original.html`** contient une centaine de boutons tout prêts
+Le fichier **`modeles/catalogue-des-boutons.html`** contient une centaine de boutons tout prêts
 (Discord, Spotify, Twitch, Telegram, Snapchat, Threads, PayPal, WhatsApp…).
 Ouvrez-le, copiez la ligne du réseau voulu, collez-la dans `index.html`
 au milieu des autres boutons, puis remplacez le `#` par votre lien.
@@ -102,7 +102,7 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | Fichier | Rôle |
 |---|---|
 | `index.html` | La page publiée |
-| `index.original.html` | Catalogue LittleLink complet des boutons |
+| `modeles/` | Réserve de modèles — ne fait pas partie du site publié |
 | `privacy.html` | Page de confidentialité |
 | `css/brands.css` | Couleurs officielles des marques (ne pas modifier) |
 | `css/custom.css` | Couleurs propres au chœur (bouton « Nous écrire ») |
