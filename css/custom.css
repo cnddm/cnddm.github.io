@@ -5,10 +5,42 @@
 */
 
 /* ------------------------------------------------------------------
+   Police du titre : Edo SZ (Vic Fieger, 2008)
+   Fichier converti du .ttf installé sur le poste vers .woff2 (17 Ko).
+   Réservée au titre : c'est une police au pinceau, très lisible en grand
+   mais fatigante en petit. Le reste de la page garde Open Sans.
+   ------------------------------------------------------------------ */
+
+@font-face {
+	font-family: "Edo SZ";
+	src: url("../fonts/edosz.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+h1 {
+	font-family: "Edo SZ", "Open Sans", sans-serif;
+	font-weight: 400;          /* la police n'a qu'une graisse : pas de faux gras */
+	letter-spacing: 0.01em;    /* annule le resserrement prévu pour Open Sans */
+	line-height: 1.15;
+
+	/* Taille fluide : sur un écran étroit, « CHŒUR NOTRE-DAME » se coupait
+	   en deux et le titre passait à quatre lignes. La taille s'adapte donc
+	   à la largeur, sans jamais dépasser celle prévue par LittleLink. */
+	font-size: clamp(1.35rem, 7vw, var(--scale-5));
+
+	/* Aucune césure automatique : les trois lignes sont voulues,
+	   elles ne doivent pas se subdiviser. */
+	hyphens: none;
+	overflow-wrap: normal;
+}
+
+/* ------------------------------------------------------------------
    Image de fond
-   L'aquarelle est ancrée en bas (le chœur reste visible) et fixe au
-   défilement. Un voile sombre est posé par-dessus : sans lui, le texte
-   blanc deviendrait illisible sur la partie dorée, en haut à gauche.
+   L'aquarelle est floutée en amont (dans le fichier JPEG, pas en CSS :
+   c'est plus fluide et le fichier est même plus léger). Elle est ancrée
+   en bas pour garder le chœur visible.
    ------------------------------------------------------------------ */
 
 body {
@@ -21,7 +53,8 @@ body {
 	min-height: 100vh;
 }
 
-/* Le voile est un calque à part, pour ne pas assombrir le texte lui-même. */
+/* Voile léger : le panneau assure désormais l'essentiel du contraste,
+   ce voile ne fait qu'unifier l'ensemble. */
 body::before {
 	content: "";
 	position: fixed;
@@ -29,10 +62,9 @@ body::before {
 	z-index: -1;
 	background: linear-gradient(
 		to bottom,
-		rgba(10, 20, 45, 0.72) 0%,
-		rgba(10, 20, 45, 0.60) 45%,
-		rgba(10, 20, 45, 0.30) 75%,
-		rgba(10, 20, 45, 0.15) 100%
+		rgba(10, 20, 45, 0.42) 0%,
+		rgba(10, 20, 45, 0.30) 50%,
+		rgba(10, 20, 45, 0.20) 100%
 	);
 }
 
@@ -42,25 +74,63 @@ body::before {
 	body {
 		background-attachment: scroll;
 	}
+	/* Rembourrage latéral resserré : chaque pixel gagné évite au titre
+	   de se couper au trait d'union. */
+	main {
+		padding-left: var(--spacing-s);
+		padding-right: var(--spacing-s);
+	}
 }
 
-/* Le titre et la phrase gagnent une ombre portée : elle garantit la
-   lisibilité même si l'image de fond est un jour remplacée. */
+/* ------------------------------------------------------------------
+   Panneau flottant
+   Le contenu est posé sur une plaque translucide qui floute ce qui passe
+   derrière elle, avec une ombre portée pour le décoller du fond.
+   Repli : sans backdrop-filter, la couleur de fond suffit à la lisibilité.
+   ------------------------------------------------------------------ */
+
+main {
+	position: relative;
+	margin: var(--spacing-xl) 0;
+	padding: var(--spacing-xl) var(--spacing-l) var(--spacing-m);
+	background: rgba(12, 22, 48, 0.46);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 1.5rem;
+	box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.45);
+	-webkit-backdrop-filter: blur(10px) saturate(115%);
+	backdrop-filter: blur(10px) saturate(115%);
+}
+
+/* Le texte garde une ombre : elle sécurise la lisibilité si l'image de
+   fond est un jour remplacée par une plus claire. */
 h1,
 .container p {
 	text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.55);
 }
 
-/* Halo discret derrière le logo, pour le détacher du fond. */
+/* Halo discret derrière le logo, pour le détacher du panneau. */
 .avatar {
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.45);
 }
 
-/* Pied de page : le bleu par défaut des liens passait mal sur l'aquarelle.
-   On repasse en blanc souligné, avec la même ombre que le reste. */
+/* Les boutons flottent eux aussi légèrement au-dessus du panneau. */
+.button-stack .button {
+	box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.32);
+}
+
+/* Les boutons LittleLink ont une largeur fixe de 300 px, qui débordait
+   de l'écran sur les téléphones étroits (320 px) et provoquait un
+   défilement horizontal. Ils se contentent désormais de la place libre. */
+.button,
+button {
+	width: min(18.75rem, 100%);
+}
+
+/* Pied de page : hors du panneau, donc directement sur l'image.
+   Le bleu par défaut des liens y passait mal. */
 footer {
 	color: #ffffff;
-	text-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.8);
+	text-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.85);
 }
 
 :root.theme-dark footer a:not(.button),

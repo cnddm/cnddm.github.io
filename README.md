@@ -108,7 +108,8 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | `css/custom.css` | Fond, voile de lisibilité et couleurs propres au chœur |
 | `images/icons/` | Logos SVG des marques |
 | `LICENSE.md`, `VERSION.md` | Licence MIT et version de LittleLink (à conserver) |
-| `images/fond.jpg` | Image de fond (aquarelle du chœur) |
+| `images/fond.jpg` | Image de fond (aquarelle du chœur, déjà floutée) |
+| `fonts/edosz.woff2` | Police du titre, Edo SZ |
 | `images/logo-source.jpg` | Logo d'origine en haute définition (1600 px) |
 | `images/avatar-source.png` | Logo recadré avec marge, source des avatars |
 
