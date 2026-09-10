@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--
+  ===========================================================================
+  MODE D'EMPLOI RAPIDE
+  ---------------------------------------------------------------------------
+  Tout ce qui est a personnaliser est marque par  <<< A REMPLIR >>>
+  1. Remplacez le nom, la description et l'URL du site.
+  2. Pour chaque bouton : remplacez href="#" par votre vrai lien.
+  3. Supprimez purement et simplement les blocs <a ...>...</a> inutiles.
+  4. Pour ajouter un autre reseau : copiez une ligne depuis index.original.html
+     (le fichier d'origine contient les ~100 boutons disponibles).
+  Theme : remplacez theme-auto ci-dessous par theme-light ou theme-dark.
+  ===========================================================================
+-->
+
+<html class="theme-auto" lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <<< A REMPLIR >>> Titre de l'onglet -->
+    <title>Mes liens</title>
+    <link rel="icon" type="image/png" href="images/avatar.png">
+
+    <!-- <<< A REMPLIR >>> Description affichee dans Google et les partages -->
+    <meta name="description" content="Retrouvez tous mes liens au meme endroit : Facebook, Instagram, YouTube et plus.">
+
+    <!-- <<< A REMPLIR >>> URL definitive du site -->
+    <link rel="canonical" href="https://EXEMPLE.github.io">
+
+    <!-- <<< A REMPLIR >>> Nom de l'auteur -->
+    <meta name="author" content="Mon Nom">
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+
+    <!-- <<< A REMPLIR >>> Apercu lors d'un partage (WhatsApp, Messenger, etc.)
+         og:url et og:image doivent etre des URLs absolues completes. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mes liens">
+    <meta property="og:description" content="Retrouvez tous mes liens au meme endroit.">
+    <meta property="og:url" content="https://EXEMPLE.github.io">
+    <meta property="og:image" content="https://EXEMPLE.github.io/images/avatar@2x.png">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Preload des polices -->
+    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/brands.css">
+
+  </head>
+
+<body>
+
+    <div class="container">
+        <div class="column">
+          <main>
+
+            <!-- <<< A REMPLIR >>> Photo de profil : remplacez images/avatar.png
+                 et images/avatar@2x.png par vos images (128px et 256px).
+                 Arrondi : avatar--rounded / avatar--soft / avatar--none -->
+            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="Photo de profil" width="128" height="128" fetchpriority="high">
+
+            <!-- <<< A REMPLIR >>> Nom ou marque -->
+            <h1>Mon Nom</h1>
+
+            <!-- <<< A REMPLIR >>> Petite phrase de presentation -->
+            <p>Tous mes liens au meme endroit.</p>
+
+            <nav class="button-stack" aria-label="Liens">
+
+              <!-- Facebook -->
+              <a class="button button-faceb" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="Logo Facebook">Facebook</a>
+
+              <!-- Instagram -->
+              <a class="button button-instagram" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Logo Instagram">Instagram</a>
+
+              <!-- YouTube -->
+              <a class="button button-yt" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/youtube.svg" alt="Logo YouTube">YouTube</a>
+
+              <!-- TikTok -->
+              <a class="button button-tiktok" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="Logo TikTok">TikTok</a>
+
+              <!-- X (ex-Twitter) -->
+              <a class="button button-x" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/x.svg" alt="Logo X">X</a>
+
+              <!-- WhatsApp -->
+              <a class="button button-whatsapp" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="Logo WhatsApp">WhatsApp</a>
+
+              <!-- LinkedIn -->
+              <a class="button button-linked" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="Logo LinkedIn">LinkedIn</a>
+
+              <!-- Bouton generique : pour un site perso, une boutique, un PDF... -->
+              <a class="button button-default" href="#" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/littlelink.svg" alt="Logo">Mon site</a>
+
+            </nav>
+      </main>
+
+      <footer>
+        <a href="privacy.html">Confidentialite</a> | Propulse par <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
