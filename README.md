@@ -1,90 +1,114 @@
-# Ma page de liens (LittleLink)
+# Ma page de liens
 
-Page unique qui regroupe tous mes liens (Facebook, Instagram, YouTube...).
-Site 100 % statique : aucun serveur, aucune base de donnees, aucun cout.
+Une page unique qui regroupe tous mes liens (Facebook, Instagram, YouTube…),
+à partager en une seule adresse.
 
-Base sur [LittleLink](https://littlelink.io) v3.11.0 (licence MIT).
+### 👉 Adresse du site : https://PSEUDO.github.io
+
+Le site est gratuit et n'expire pas. Il n'y a rien à payer, rien à renouveler.
 
 ---
 
-## 1. Modifier mes liens
+## Modifier un lien
 
-Tout se passe dans **`index.html`**. Les endroits a personnaliser sont marques
-par `<<< A REMPLIR >>>`.
+**Aucun logiciel à installer.** Tout se fait depuis cette page GitHub, dans le navigateur.
 
-Pour chaque bouton, remplacez `href="#"` par le vrai lien :
+1. Dans la liste de fichiers ci-dessus, cliquez sur **`index.html`**
+2. En haut à droite du fichier, cliquez sur le crayon **✏️**
+3. Cherchez la ligne du réseau concerné, par exemple Instagram :
 
-```html
-<a class="button button-instagram" href="https://instagram.com/monpseudo" ...>Instagram</a>
-```
+   ```
+   <a class="button button-instagram" href="#" ...>Instagram</a>
+   ```
 
-- **Supprimer un reseau** : effacez la ligne `<a ...>...</a>` correspondante.
-- **Ajouter un reseau** : copiez-collez la ligne depuis `index.original.html`,
-  qui contient les ~100 boutons disponibles (Discord, Spotify, Twitch, Telegram,
-  Snapchat, Threads, PayPal, Signal, GitHub...).
-- **Changer la photo** : remplacez `images/avatar.png` (128x128 px) et
-  `images/avatar@2x.png` (256x256 px).
-- **Theme** : ligne 15, `theme-auto` (suit le systeme), `theme-light` ou `theme-dark`.
+4. Remplacez le `#` par votre lien, **en gardant les guillemets** :
 
-Apres modification : ouvrez `index.html` dans un navigateur pour verifier,
-puis publiez (voir section 3).
+   ```
+   <a class="button button-instagram" href="https://instagram.com/mon-compte" ...>Instagram</a>
+   ```
 
-## 2. Mise en ligne (gratuite, via GitHub Pages)
+5. Bouton vert **`Commit changes…`** en haut à droite, puis **`Commit changes`**
+6. Attendez 1 à 2 minutes, puis rechargez le site. C'est en ligne.
 
-L'hebergement choisi est **GitHub Pages** : gratuit, sans carte bancaire,
-sans limite de trafic raisonnable, et l'adresse suit le compte.
+> ⚠️ Ne touchez qu'à ce qui est **entre les guillemets** après `href=`.
+> Le reste de la ligne fait fonctionner le bouton et son logo.
 
-1. Creer un compte GitHub avec l'adresse Proton dediee.
-2. Creer un depot **public** nomme exactement `PSEUDO.github.io`
-   (ou `PSEUDO` est le nom du compte GitHub).
-3. Pousser ce dossier dedans (commandes en section 3).
-4. Sur GitHub : **Settings > Pages > Source : Deploy from a branch >
-   branche `main`, dossier `/ (root)`** puis *Save*.
-5. Au bout de 1 a 2 minutes, le site est en ligne sur `https://PSEUDO.github.io`.
+## Supprimer un réseau
 
-## 3. Publier une modification
+Même méthode (étapes 1 à 2), puis effacez la ligne entière du réseau,
+de `<a` jusqu'à `</a>`. Enregistrez comme à l'étape 5.
+
+## Ajouter un réseau
+
+Le fichier **`index.original.html`** contient une centaine de boutons tout prêts
+(Discord, Spotify, Twitch, Telegram, Snapchat, Threads, PayPal, WhatsApp…).
+Ouvrez-le, copiez la ligne du réseau voulu, collez-la dans `index.html`
+au milieu des autres boutons, puis remplacez le `#` par votre lien.
+
+## Changer le nom, la phrase ou la photo
+
+Dans `index.html`, tout ce qui est personnalisable est signalé par un
+commentaire **`<<< A REMPLIR >>>`** juste au-dessus.
+
+Pour la photo : remplacez les fichiers `images/avatar.png` (128 × 128 pixels)
+et `images/avatar@2x.png` (256 × 256 pixels) en gardant exactement ces noms.
+
+## En cas d'erreur
+
+Rien n'est jamais perdu : l'onglet **`Commits`** (en haut de la liste de fichiers)
+garde l'historique de toutes les modifications, et permet de revenir en arrière.
+
+---
+
+## Changer de propriétaire
+
+Ce site est rattaché à un **compte GitHub dédié**, créé avec une **adresse Proton Mail
+dédiée**. Rien d'autre n'est lié à ce compte : le transmettre suffit.
+
+1. L'ancien responsable transmet l'adresse Proton et les deux mots de passe
+   (Proton et GitHub).
+2. Le nouveau responsable **change immédiatement les deux mots de passe**.
+3. Il vérifie qu'aucune double authentification ne pointe encore vers l'ancien
+   téléphone : sur GitHub, *Settings → Password and authentication*.
+
+**L'adresse du site ne change pas.** Les liens déjà imprimés ou publiés
+(bio Instagram, QR codes, affiches, cartes de visite) continuent de fonctionner.
+
+---
+
+<details>
+<summary>Informations techniques (pour un développeur)</summary>
+
+Site statique basé sur [LittleLink](https://littlelink.io) v3.11.0 (licence MIT).
+Aucun serveur, aucune base de données, aucun script.
+
+**Hébergement** — GitHub Pages, dépôt public nommé `PSEUDO.github.io`,
+*Settings → Pages → Deploy from a branch → `main` / `(root)`*.
+
+**En local**
 
 ```bash
-git add -A
-git commit -m "Mise a jour des liens"
-git push
+git clone https://github.com/PSEUDO/PSEUDO.github.io.git
+cd PSEUDO.github.io
+python -m http.server 8123   # puis http://localhost:8123
 ```
 
-Le site se met a jour tout seul en une a deux minutes.
+**Publier**
 
-## 4. Passation a un nouveau proprietaire
+```bash
+git add -A && git commit -m "Mise à jour des liens" && git push
+```
 
-Le compte GitHub a ete cree avec une adresse **Proton Mail dediee**.
-Transmettre le projet revient donc a transmettre ce compte :
+| Fichier | Rôle |
+|---|---|
+| `index.html` | La page publiée |
+| `index.original.html` | Catalogue LittleLink complet des boutons |
+| `privacy.html` | Page de confidentialité |
+| `css/brands.css` | Couleurs officielles des marques |
+| `images/icons/` | Logos SVG |
+| `docker/`, `wrangler.toml` | Hébergements alternatifs, non utilisés |
 
-1. Donner l'adresse Proton + son mot de passe, et le mot de passe GitHub.
-2. Le nouveau proprietaire change les deux mots de passe.
-3. Il verifie qu'aucune double authentification n'est restee sur un
-   ancien telephone (GitHub : *Settings > Password and authentication*).
+**Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
+HTTPS fourni gratuitement par GitHub.
 
-**Avantage decisif de cette methode : l'URL `https://PSEUDO.github.io` ne
-change pas.** Tous les liens deja partages (bio Instagram, QR codes, cartes
-de visite) continuent de fonctionner.
-
-Variante si l'on prefere garder son compte GitHub : ajouter la personne en
-collaborateur (*Settings > Collaborators*), ou transferer le depot
-(*Settings > General > Transfer ownership*). Attention : dans ce dernier cas
-**l'URL change** puisqu'elle contient le nom du compte.
-
-## 5. Nom de domaine personnalise (optionnel, payant)
-
-Pour une adresse du type `monnom.fr` (environ 10 EUR par an) :
-acheter le domaine, puis GitHub *Settings > Pages > Custom domain*.
-Le HTTPS est fourni gratuitement par GitHub.
-
-## Structure du projet
-
-| Fichier / dossier      | Role                                              |
-|------------------------|---------------------------------------------------|
-| `index.html`           | **La page a editer**                              |
-| `index.original.html`  | Version d'origine : catalogue de tous les boutons |
-| `privacy.html`         | Page de confidentialite (a adapter ou supprimer)  |
-| `css/brands.css`       | Couleurs officielles de chaque marque             |
-| `images/icons/`        | Logos SVG                                         |
-| `images/avatar.png`    | Photo de profil                                   |
-| `docker/`, `wrangler.toml` | Hebergements alternatifs, inutiles ici        |
+</details>
