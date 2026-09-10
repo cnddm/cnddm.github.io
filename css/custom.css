@@ -74,48 +74,63 @@ body::before {
 	body {
 		background-attachment: scroll;
 	}
-	/* Rembourrage latéral resserré : chaque pixel gagné évite au titre
-	   de se couper au trait d'union. */
-	main {
-		padding-left: var(--spacing-s);
-		padding-right: var(--spacing-s);
-	}
 }
 
 /* ------------------------------------------------------------------
-   Panneau flottant
-   Le contenu est posé sur une plaque translucide qui floute ce qui passe
-   derrière elle, avec une ombre portée pour le décoller du fond.
-   Repli : sans backdrop-filter, la couleur de fond suffit à la lisibilité.
+   Éléments posés directement sur l'image
+   Il n'y a pas de plaque intermédiaire : chaque élément se détache du
+   fond par sa seule ombre portée. C'est l'ombre qui remplace le panneau
+   pour garantir la lisibilité, elle n'est donc pas que décorative.
    ------------------------------------------------------------------ */
 
 main {
-	position: relative;
 	margin: var(--spacing-xl) 0;
-	padding: var(--spacing-xl) var(--spacing-l) var(--spacing-m);
-	background: rgba(12, 22, 48, 0.46);
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	border-radius: 1.5rem;
-	box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.45);
-	-webkit-backdrop-filter: blur(10px) saturate(115%);
-	backdrop-filter: blur(10px) saturate(115%);
 }
 
-/* Le texte garde une ombre : elle sécurise la lisibilité si l'image de
-   fond est un jour remplacée par une plus claire. */
-h1,
+/* Titre en jaune : deux ombres superposées, une courte et dense qui
+   dessine le contour des lettres, une large et diffuse qui assombrit
+   l'image juste derrière. Sans elles, le jaune clair passerait mal
+   sur les zones dorées de l'aquarelle. */
+h1 {
+	color: #FFC000;
+	text-shadow:
+		0 0.09375rem 0.1875rem rgba(0, 0, 0, 0.85),
+		0 0.25rem 1.5rem rgba(0, 0, 0, 0.65);
+}
+
 .container p {
-	text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.55);
+	text-shadow:
+		0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.9),
+		0 0.125rem 0.75rem rgba(0, 0, 0, 0.6);
 }
 
-/* Halo discret derrière le logo, pour le détacher du panneau. */
+/* Le logo est déjà rond et détouré : l'ombre suit son contour. */
 .avatar {
-	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.45);
+	box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.55);
 }
 
-/* Les boutons flottent eux aussi légèrement au-dessus du panneau. */
+/* Ombre plus marquée sur les boutons : c'est elle qui les fait flotter,
+   maintenant qu'il n'y a plus de panneau derrière eux. */
 .button-stack .button {
-	box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.32);
+	box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button-stack .button:hover,
+.button-stack .button:focus-visible {
+	transform: translateY(-0.125rem);
+	box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
+}
+
+/* Respecte le réglage système « réduire les animations ». */
+@media (prefers-reduced-motion: reduce) {
+	.button-stack .button {
+		transition: none;
+	}
+	.button-stack .button:hover,
+	.button-stack .button:focus-visible {
+		transform: none;
+	}
 }
 
 /* Les boutons LittleLink ont une largeur fixe de 300 px, qui débordait

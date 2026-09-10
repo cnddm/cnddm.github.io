@@ -109,9 +109,15 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | `images/icons/` | Logos SVG des marques |
 | `LICENSE.md`, `VERSION.md` | Licence MIT et version de LittleLink (à conserver) |
 | `images/fond.jpg` | Image de fond (aquarelle du chœur, déjà floutée) |
-| `fonts/edosz.woff2` | Police du titre, Edo SZ |
-| `images/logo-source.jpg` | Logo d'origine en haute définition (1600 px) |
-| `images/avatar-source.png` | Logo recadré avec marge, source des avatars |
+| `fonts/edosz.woff2` | Police du titre, Edo SZ (voir la licence plus bas) |
+| `images/logo-source.png` | Logo d'origine en haute définition (1024 px) |
+
+**Police du titre** — Edo SZ, de Vic Fieger (2008), sous licence
+[1001Fonts Free For Commercial Use](https://www.1001fonts.com/licenses/ffc.html).
+Usage personnel et commercial gratuit ; l'article 6 autorise explicitement
+l'incorporation dans un site web, et l'article 4 la conversion en WOFF2 tant
+que la police n'est pas modifiée. Seule interdiction : revendre ou
+redistribuer le fichier de police en tant que tel.
 
 **Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
 HTTPS fourni gratuitement par GitHub.
