@@ -106,7 +106,8 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | `privacy.html` | Page de confidentialité |
 | `css/brands.css` | Couleurs officielles des marques (ne pas modifier) |
 | `css/custom.css` | Couleurs propres au chœur (bouton « Nous écrire ») |
-| `images/icons/` | Logos SVG |
+| `images/icons/` | Logos SVG des marques |
+| `LICENSE.md`, `VERSION.md` | Licence MIT et version de LittleLink (à conserver) |
 | `images/logo-source.jpg` | Logo d'origine en haute définition (1600 px) |
 
 **Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
