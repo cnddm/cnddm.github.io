@@ -105,10 +105,12 @@ git add -A && git commit -m "Mise à jour des liens" && git push
 | `modeles/` | Réserve de modèles — ne fait pas partie du site publié |
 | `privacy.html` | Page de confidentialité |
 | `css/brands.css` | Couleurs officielles des marques (ne pas modifier) |
-| `css/custom.css` | Couleurs propres au chœur (bouton « Nous écrire ») |
+| `css/custom.css` | Fond, voile de lisibilité et couleurs propres au chœur |
 | `images/icons/` | Logos SVG des marques |
 | `LICENSE.md`, `VERSION.md` | Licence MIT et version de LittleLink (à conserver) |
+| `images/fond.jpg` | Image de fond (aquarelle du chœur) |
 | `images/logo-source.jpg` | Logo d'origine en haute définition (1600 px) |
+| `images/avatar-source.png` | Logo recadré avec marge, source des avatars |
 
 **Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
 HTTPS fourni gratuitement par GitHub.

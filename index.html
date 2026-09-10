@@ -19,8 +19,9 @@
   ==========================================================================
 -->
 
-<!-- Thème : theme-auto (suit le téléphone) / theme-light (clair) / theme-dark (sombre) -->
-<html class="theme-auto" lang="fr">
+<!-- Thème figé en sombre : la page a une image de fond, le texte doit rester blanc.
+     Repasser en theme-auto seulement si l'image de fond est retirée. -->
+<html class="theme-dark" lang="fr">
 
   <head>
     <meta charset="utf-8">
@@ -39,8 +40,7 @@
     <!-- <<< À MODIFIER SI BESOIN >>> Nom du propriétaire de la page -->
     <meta name="author" content="Chœur Notre-Dame du Magnificat">
 
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#1b2f5e">
 
     <!-- <<< À MODIFIER SI BESOIN >>> Aperçu lors d'un partage (WhatsApp, Messenger, Facebook…).
          Les deux adresses ci-dessous doivent être complètes (https://...). -->
@@ -74,10 +74,10 @@
                  Remplacez images/avatar.png (128 x 128 px) et
                  images/avatar@2x.png (256 x 256 px) en gardant ces noms.
                  Forme : avatar--rounded (rond) / avatar--soft (arrondi) / avatar--none (carré) -->
-            <img class="avatar avatar--soft" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="Logo du Chœur Notre-Dame du Magnificat" width="128" height="128" fetchpriority="high">
+            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="Logo du Chœur Notre-Dame du Magnificat" width="128" height="128" fetchpriority="high">
 
             <!-- <<< À MODIFIER SI BESOIN >>> Nom ou nom de l'association -->
-            <h1>Chœur Notre-Dame du Magnificat</h1>
+            <h1>Chœur Notre-Dame<br>du<br>Magnificat</h1>
 
             <!-- <<< À MODIFIER SI BESOIN >>> Courte phrase de présentation -->
             <p>Chœur des Guides et Scouts d'Europe de Paris</p>
@@ -91,7 +91,7 @@
               <a class="button button-faceb" href="https://www.facebook.com/cgseparis" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="Logo Facebook">Facebook</a>
 
               <!-- YouTube -->
-              <a class="button button-yt" href="https://www.youtube.com/@cgseparis" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/youtube.svg" alt="Logo YouTube">YouTube</a>
+              <a class="button button-yt-plein" href="https://www.youtube.com/@cgseparis" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/youtube-inverse.svg" alt="Logo YouTube">YouTube</a>
 
               <!-- Contact par e-mail -->
               <a class="button button-contact" href="mailto:choeurnddm@proton.me"><img class="icon" aria-hidden="true" src="images/icons/generic-email.svg" alt="Icône enveloppe">Nous écrire</a>

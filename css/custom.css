@@ -1,13 +1,92 @@
 /*
-  Styles propres à ce site (les autres fichiers CSS viennent de LittleLink
-  et ne doivent pas être modifiés, pour pouvoir les mettre à jour un jour).
-
-  Bouton "Nous écrire" : rouge repris de la croix du logo (#991B1E).
-  Contraste avec le texte blanc : 8,3:1 (norme d'accessibilité WCAG AA : 4,5:1).
+  Styles propres à ce site.
+  Les autres fichiers CSS viennent de LittleLink : ne pas les modifier,
+  pour pouvoir les mettre à jour un jour.
 */
 
+/* ------------------------------------------------------------------
+   Image de fond
+   L'aquarelle est ancrée en bas (le chœur reste visible) et fixe au
+   défilement. Un voile sombre est posé par-dessus : sans lui, le texte
+   blanc deviendrait illisible sur la partie dorée, en haut à gauche.
+   ------------------------------------------------------------------ */
+
+body {
+	background-color: #14224a;          /* teinte de repli avant chargement */
+	background-image: url("../images/fond.jpg");
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+/* Le voile est un calque à part, pour ne pas assombrir le texte lui-même. */
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background: linear-gradient(
+		to bottom,
+		rgba(10, 20, 45, 0.72) 0%,
+		rgba(10, 20, 45, 0.60) 45%,
+		rgba(10, 20, 45, 0.30) 75%,
+		rgba(10, 20, 45, 0.15) 100%
+	);
+}
+
+/* Sur mobile, background-attachment: fixed est ignoré ou saccadé :
+   on laisse l'image défiler normalement. */
+@media (max-width: 40rem) {
+	body {
+		background-attachment: scroll;
+	}
+}
+
+/* Le titre et la phrase gagnent une ombre portée : elle garantit la
+   lisibilité même si l'image de fond est un jour remplacée. */
+h1,
+.container p {
+	text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.55);
+}
+
+/* Halo discret derrière le logo, pour le détacher du fond. */
+.avatar {
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.45);
+}
+
+/* Pied de page : le bleu par défaut des liens passait mal sur l'aquarelle.
+   On repasse en blanc souligné, avec la même ombre que le reste. */
+footer {
+	color: #ffffff;
+	text-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.8);
+}
+
+:root.theme-dark footer a:not(.button),
+:root.theme-dark footer a:not(.button):hover {
+	color: #ffffff;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+/* ------------------------------------------------------------------
+   Boutons propres au chœur
+   ------------------------------------------------------------------ */
+
+/* YouTube en aplat : fond rouge, logo inversé (pastille blanche,
+   triangle rouge) et texte blanc.
+   Rouge #EE0000 plutôt que #FF0000, indiscernable à l'œil mais qui
+   atteint 4,5:1 avec le blanc — le rouge pur plafonne à 4,0:1. */
+.button.button-yt-plein {
+	--button-text: #ffffff;
+	--button-background: #EE0000;
+	--button-border: 1px solid #EE0000;
+}
+
+/* Contact : violet de la charte Proton Mail (contraste 5,2:1). */
 .button.button-contact {
 	--button-text: #ffffff;
-	--button-background: #991B1E;
-	--button-border: 1px solid #991B1E;
+	--button-background: #6D4AFF;
+	--button-border: 1px solid #6D4AFF;
 }
