@@ -1,0 +1,48 @@
+{
+  "_commentaire": "Contenu de la page. Ce fichier est modifié par l'application ; index.html en est ensuite regénéré. Ne pas modifier index.html à la main : il serait écrasé.",
+  "depot": {
+    "proprietaire": "cnddm",
+    "nom": "cnddm.github.io",
+    "adresse_site": "https://cnddm.github.io"
+  },
+  "textes": {
+    "titre_lignes": [
+      "Chœur Notre‑Dame",
+      "du",
+      "Magnificat"
+    ],
+    "phrase": "Chœur des Guides et Scouts d'Europe de Paris",
+    "titre_onglet": "Chœur Notre-Dame du Magnificat",
+    "description": "Chœur Notre-Dame du Magnificat, chorale des Guides et Scouts d'Europe de Paris, créée dans les années 1970 et reconstituée en 2013.",
+    "description_partage": "Chorale des Guides et Scouts d'Europe de Paris. Retrouvez-nous sur Instagram, Facebook et YouTube.",
+    "contact_confidentialite": "choeurnddm@proton.me"
+  },
+  "apparence": {
+    "couleur_titre": "#FFC000",
+    "flou_fond": 6,
+    "ancrage_fond": "center bottom",
+    "animation_boutons": true
+  },
+  "boutons": [
+    {
+      "type": "instagram",
+      "libelle": "Instagram",
+      "url": "https://www.instagram.com/choeur_scout_nd_du_magnificat"
+    },
+    {
+      "type": "facebook",
+      "libelle": "Facebook",
+      "url": "https://www.facebook.com/cgseparis"
+    },
+    {
+      "type": "youtube",
+      "libelle": "YouTube",
+      "url": "https://www.youtube.com/@cgseparis"
+    },
+    {
+      "type": "contact",
+      "libelle": "Nous écrire",
+      "url": "mailto:choeurnddm@proton.me"
+    }
+  ]
+}
