@@ -1,78 +1,63 @@
 # Chœur Notre-Dame du Magnificat — page de liens
 
-Une page unique qui regroupe tous les liens du chœur (Instagram, Facebook,
-YouTube, contact), à partager en une seule adresse.
+Page unique regroupant tous les liens du chœur, à partager en une seule adresse.
 
-### 👉 Adresse du site : https://cnddm.github.io
+### 👉 https://cnddm.github.io
 
 Le site est gratuit et n'expire pas. Il n'y a rien à payer, rien à renouveler.
 
 ---
 
-## Modifier un lien
+## Pour modifier la page : l'application
 
-**Aucun logiciel à installer.** Tout se fait depuis cette page GitHub, dans le navigateur.
+Tout se fait avec le programme **« Ma page de liens »** — un seul fichier à
+ouvrir, rien à installer. Il permet de changer les textes, le logo, l'image de
+fond, d'ajouter ou retirer des boutons, puis d'envoyer le tout en ligne.
 
-1. Dans la liste de fichiers ci-dessus, cliquez sur **`index.html`**
-2. En haut à droite du fichier, cliquez sur le crayon **✏️**
-3. Cherchez la ligne du réseau concerné, par exemple Instagram :
+Demandez-le au responsable précédent : il ne se télécharge pas depuis cette
+page, pour des raisons de sécurité.
 
-   ```
-   <a class="button button-instagram" href="#" ...>Instagram</a>
-   ```
+> ### ⚠️ Ne modifiez pas les fichiers de ce dépôt à la main
+>
+> `index.html` et `privacy.html` sont **reconstruits automatiquement** par
+> l'application à partir du fichier `contenu.json`. Une correction faite ici
+> avec le crayon ✏️ serait **effacée sans prévenir** à la prochaine
+> publication. Passez toujours par l'application.
 
-4. Remplacez le `#` par votre lien, **en gardant les guillemets** :
-
-   ```
-   <a class="button button-instagram" href="https://instagram.com/mon-compte" ...>Instagram</a>
-   ```
-
-5. Bouton vert **`Commit changes…`** en haut à droite, puis **`Commit changes`**
-6. Attendez 1 à 2 minutes, puis rechargez le site. C'est en ligne.
-
-> ⚠️ Ne touchez qu'à ce qui est **entre les guillemets** après `href=`.
-> Le reste de la ligne fait fonctionner le bouton et son logo.
-
-## Supprimer un réseau
-
-Même méthode (étapes 1 à 2), puis effacez la ligne entière du réseau,
-de `<a` jusqu'à `</a>`. Enregistrez comme à l'étape 5.
-
-## Ajouter un réseau
-
-Le fichier **`modeles/catalogue-des-boutons.html`** contient une centaine de boutons tout prêts
-(Discord, Spotify, Twitch, Telegram, Snapchat, Threads, PayPal, WhatsApp…).
-Ouvrez-le, copiez la ligne du réseau voulu, collez-la dans `index.html`
-au milieu des autres boutons, puis remplacez le `#` par votre lien.
-
-## Changer le nom, la phrase ou le logo
-
-Dans `index.html`, tout ce qui est personnalisable est signalé par un
-commentaire **`<<< A REMPLIR >>>`** juste au-dessus.
-
-Pour le logo : remplacez les fichiers `images/avatar.png` (128 × 128 pixels)
-et `images/avatar@2x.png` (256 × 256 pixels) en gardant exactement ces noms.
+Après un envoi, comptez une à deux minutes. Si le changement n'apparaît pas,
+appuyez sur **Ctrl + Maj + R** : c'est presque toujours l'ancienne version
+gardée en mémoire par le navigateur.
 
 ## En cas d'erreur
 
-Rien n'est jamais perdu : l'onglet **`Commits`** (en haut de la liste de fichiers)
-garde l'historique de toutes les modifications, et permet de revenir en arrière.
+Rien n'est jamais perdu. L'onglet **Commits**, en haut de la liste des
+fichiers, conserve l'historique de toutes les versions et permet de revenir
+en arrière.
 
 ---
 
-## Changer de propriétaire
+## Changer de responsable
 
-Ce site est rattaché à un **compte GitHub dédié**, créé avec une **adresse Proton Mail
-dédiée**. Rien d'autre n'est lié à ce compte : le transmettre suffit.
+Ce site est rattaché à un **compte GitHub dédié**, créé avec une **adresse
+Proton Mail dédiée** (`choeurnddm@proton.me`). Rien d'autre n'est lié à ce
+compte : le transmettre suffit.
 
-1. L'ancien responsable transmet l'adresse Proton (`choeurnddm@proton.me`) et les
-   deux mots de passe (Proton et GitHub).
-2. Le nouveau responsable **change immédiatement les deux mots de passe**.
-3. Il vérifie qu'aucune double authentification ne pointe encore vers l'ancien
-   téléphone : sur GitHub, *Settings → Password and authentication*.
+1. L'ancien responsable transmet l'adresse Proton et les deux mots de passe
+   (Proton et GitHub), **ainsi que le programme « Ma page de liens »**.
+2. Le nouveau responsable change immédiatement les deux mots de passe.
+3. Il vérifie qu'aucune double authentification ne pointe encore vers
+   l'ancien téléphone : *Settings → Password and authentication*.
 
 **L'adresse du site ne change pas.** Les liens déjà imprimés ou publiés
-(bio Instagram, QR codes, affiches, cartes de visite) continuent de fonctionner.
+— bio Instagram, QR codes, affiches — continuent de fonctionner.
+
+### Si l'application refuse de publier
+
+Elle utilise un jeton d'accès GitHub qui peut expirer, être révoqué, ou être
+supprimé par GitHub après un an sans usage. Dans l'application :
+**4. Publier → Remplacer le jeton…**, et collez-en un neuf créé depuis le
+compte du chœur (*Settings → Developer settings → Personal access tokens*,
+avec le droit d'écriture sur ce dépôt).
 
 ---
 
@@ -80,46 +65,34 @@ dédiée**. Rien d'autre n'est lié à ce compte : le transmettre suffit.
 <summary>Informations techniques (pour un développeur)</summary>
 
 Site statique basé sur [LittleLink](https://littlelink.io) v3.11.0 (licence MIT).
-Aucun serveur, aucune base de données, aucun script.
+Aucun serveur, aucune base de données, aucun script côté serveur.
 
 **Hébergement** — GitHub Pages, dépôt public nommé `cnddm.github.io`,
 *Settings → Pages → Deploy from a branch → `main` / `(root)`*.
 
-**En local**
-
-```bash
-git clone https://github.com/cnddm/cnddm.github.io.git
-cd cnddm.github.io
-python -m http.server 8123   # puis http://localhost:8123
-```
-
-**Publier**
-
-```bash
-git add -A && git commit -m "Mise à jour des liens" && git push
-```
+**Le HTML est généré, pas écrit.** `contenu.json` est la source de vérité ;
+`index.html` en est reconstruit intégralement à chaque publication, à partir
+d'un gabarit. Le code de l'application et les gabarits ne sont pas dans ce
+dépôt : ils vivent à part, l'exécutable contenant un jeton d'accès.
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | La page publiée |
-| `modeles/` | Réserve de modèles — ne fait pas partie du site publié |
-| `privacy.html` | Page de confidentialité |
-| `css/brands.css` | Couleurs officielles des marques (ne pas modifier) |
-| `css/custom.css` | Fond, voile de lisibilité et couleurs propres au chœur |
-| `images/icons/` | Logos SVG des marques |
-| `LICENSE.md`, `VERSION.md` | Licence MIT et version de LittleLink (à conserver) |
-| `images/fond.jpg` | Image de fond (aquarelle du chœur, déjà floutée) |
-| `fonts/edosz.woff2` | Police du titre, Edo SZ (voir la licence plus bas) |
-| `images/logo-source.png` | Logo d'origine en haute définition (1024 px) |
+| `contenu.json` | Textes, liens et réglages — **la seule chose à modifier** |
+| `index.html` | Page publiée, **générée automatiquement** |
+| `privacy.html` | Page de confidentialité, **générée automatiquement** |
+| `css/custom.css` | Fond, couleurs et boutons propres au chœur |
+| `css/brands.css` | Couleurs officielles des marques (LittleLink, ne pas modifier) |
+| `fonts/edosz.woff2` | Police du titre, Edo SZ |
+| `images/` | Logo, image de fond et icônes des marques |
 
 **Police du titre** — Edo SZ, de Vic Fieger (2008), sous licence
 [1001Fonts Free For Commercial Use](https://www.1001fonts.com/licenses/ffc.html).
 Usage personnel et commercial gratuit ; l'article 6 autorise explicitement
-l'incorporation dans un site web, et l'article 4 la conversion en WOFF2 tant
+l'incorporation dans un site web et l'article 4 la conversion en WOFF2, tant
 que la police n'est pas modifiée. Seule interdiction : revendre ou
 redistribuer le fichier de police en tant que tel.
 
-**Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom domain*.
-HTTPS fourni gratuitement par GitHub.
+**Domaine personnalisé** (optionnel, ~10 €/an) — *Settings → Pages → Custom
+domain*. Le HTTPS est fourni gratuitement par GitHub.
 
 </details>
